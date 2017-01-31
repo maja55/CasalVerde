@@ -6,6 +6,6 @@ root to: 'creatives#index'
 
 
 resources :photos, only: [:new, :edit, :update, :destroy]
-resources :contents
+resources :contents, only: [:index, :new, :create, :edit, :update, :destroy]
 
 end
