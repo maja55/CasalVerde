@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # for the Creative bootstrap.. info https://github.com/MrPowers/frontend-generators
 
 root to: 'creatives#index'
-resources :bookings, only: [:new, :create]
 
-resources :photos, only: [:new, :edit, :update, :destroy]
+resources :photos, only: [:new, :create, :edit, :update, :destroy]
+resources :bookings, only: [:new, :create]
 
 end
