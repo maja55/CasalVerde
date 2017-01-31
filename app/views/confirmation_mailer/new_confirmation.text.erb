@@ -1,3 +1,17 @@
-Confirmation#new_confirmation
+Dear Mr./Mrs. <%= @booking.last_name %>,
 
-<%= @greeting %>, find me in app/views/confirmation_mailer/new_confirmation.text.erb
+Thank you for your reservation at Casalverde!
+
+Your Booking Details:
+
+Arrival Date: <%= @booking.arrival_date %>
+Departure Date: <%= @booking.departure_date %>
+No. of Guests: <%= @booking.guests %>
+
+etc etc.
+
+As soon as your booking has been processed you will receive a confirmation email.
+
+Kind regards,
+
+Casalverde.
