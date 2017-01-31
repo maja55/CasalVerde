@@ -44,10 +44,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'factory_girl_rails', '4.7.0'
   gem 'faker', '1.6.6'
+  gem 'selenium-webdriver', '~> 2.53'
 end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'database_cleaner'  
 end
 
 
