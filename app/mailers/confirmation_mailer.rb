@@ -5,9 +5,16 @@ class ConfirmationMailer < ApplicationMailer
   #
   #   en.confirmation_mailer.new_confirmation.subject
   #
-  def new_confirmation
+
+  #this new_confirmation method is like a controller for the email generator
+  # it passes in the variables needed to generate the booking view.
+  def new_confirmation(booking)
+    @booking = booking
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: "@booking.email",
+      subject: "Booking Confirmation for Casalverde"
   end
+
+
 end
