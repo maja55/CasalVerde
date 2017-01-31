@@ -12,6 +12,9 @@ class PhotosController < ApplicationController
   def edit
   end
 
+  def destroy    
+  end
+
   private
 
   def photo_params
