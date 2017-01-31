@@ -48,7 +48,7 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :paragraph, :list)
+    params.require(:content).permit(:title, :paragraph, list: [])
   end
 
 end
