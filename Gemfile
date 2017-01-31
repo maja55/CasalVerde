@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'carrierwave', '0.11.2'
+gem 'cloudinary', '1.2.3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
