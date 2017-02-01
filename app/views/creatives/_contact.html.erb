@@ -22,15 +22,15 @@
     <h2>Contact Form</h2>
   <div class="form-group">
     <label for="Name">Name</label>
-    <%= f.string :name, placeholder: "Name", class="form-control" %>
+    <%= f.text_field :name, placeholder: "Name", class:"form-control" %>
   </div>
   <div class="form-group">
     <label for="Email">Email</label>
-    <%= f.string :email, placeholder: "youremail@example.com", class="form-control" %>
+    <%= f.text_field :email, placeholder: "youremail@example.com", class:"form-control" %>
   </div>
   <div class="form-group">
     <label for="Question">Question/Remark</label>
-    <%= f.text_field :question, placeholder: "Your Question", class="form-control"%>
+    <%= f.text_area :question, placeholder: "Your Question", class:"form-control"%>
   </div>
 
   <div class="actions">

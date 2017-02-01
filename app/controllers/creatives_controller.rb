@@ -3,5 +3,6 @@ class CreativesController < ApplicationController
 layout "creative"
 
   def index
+    @question = Question.new
   end
 end
