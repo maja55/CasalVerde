@@ -1,4 +1,4 @@
-class Admin::BookingsController < Admin::BaseController
+class Admin::BookingsControlle < Admin::BaseController
 def index
 
 end
