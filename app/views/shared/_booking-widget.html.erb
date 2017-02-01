@@ -1,84 +1,78 @@
 <%= form_for @booking do |f| %>
-  <div>
-    <%= f.label("Check-in") %>
-    <%= f.date_field(:start_date) %>
-  </div>
 
-  <div>
-    <%= f.label("Check-out") %>
-    <%= f.date_field(:end_date) %>
-  </div>
-
-  <div>
-    <%= f.label("Guests") %>
-    <%= f.select :number_of_guests, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]] %>
-  </div>
-
-  <hr>
-  <h3>Booking Information:</h3>
+  <% if @booking.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+    <h4><%= pluralize(@booking.errors.count, "error") %> to fix:</h4>
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end  %>
+    </ul>
+    </div>
+  <% end %>
 
   <div>
     <%= f.label("Salutation") %>
-    <%= f.select :salutation, [["Mr.", 1], ["Ms.", 2]] %>
-  </div>
-
-  <div>
-    <%= f.label("First Name") %>
-    <%= f.text_field(:first_name) %>
-  </div>
-
-  <div>
-    <%= f.label("Insertion") %>
-    <%= f.text_field(:insertion) %>
-  </div>
-
-  <div>
-    <%= f.label("Last Name") %>
-    <%= f.text_field(:last_name) %>
+    <%= f.select :salutation, [["Mr.", 1], ["Ms.", 2]], class: "form-control" %>
   </div>
 
   <div>
     <%= f.label("Date of Birth") %>
-    <%= f.date_field(:date_of_birth) %>
+    <%= f.date_select :date_of_birth, {order: [:day, :month, :year], prompt: { day: 'day', month: 'month', year: 'year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100} %>
   </div>
 
   <div>
     <%= f.label("Country") %>
-    <%= f.text_field(:country) %>
+    <%= country_select "booking", "country", selected: "NL" %>
   </div>
 
-  <div>
-    <%= f.label("Street") %>
-    <%= f.text_field(:street) %>
+  <div class="form-group col-md-6">
+
+      <div class="col-md-10">
+        <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :insertion, class: "form-control" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.text_field :phone_number, class: "form-control", placeholder: "Phone Number" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.text_field :email_confirmation, class: "form-control", placeholder: "Email Confirmation" %>
+      </div>
+
   </div>
 
-  <div>
-    <%= f.label("House Number") %>
-    <%= f.number_field(:house_number) %>
+  <div class="form-group col-md-6">
+
+      <div class="col-md-10">
+        <%= f.text_field :street, class: "form-control", placeholder: "Address" %>
+      </div>
+      <div class="col-md-2">
+        <%= f.text_field :house_number, class: "form-control", placeholder: "Nr." %>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :zip_code, class: "form-control", placeholder: "Zip-code" %>
+      </div>
+      <div class="col-md-8">
+        <%= f.text_field :city, class: "form-control", placeholder: "City" %>
+      </div>
+
   </div>
 
-  <div>
-    <%= f.label("ZIP Code") %>
-    <%= f.text_field(:zip_code) %>
-  </div>
 
-  <div>
-    <%= f.label("City") %>
-    <%= f.text_field(:city) %>
-  </div>
+<div class="center">
+  <%= f.submit "Book now", class: "btn btn-default" %>
+</div>
 
-  <div>
-    <%= f.label("Phone Number") %>
-    <%= f.text_field(:phone_number) %>
-  </div>
 
-  <div>
-    <%= f.label("Email") %>
-    <%= f.text_field(:email) %>
-  </div>
 
-  <div>
-    <%= f.submit "Book now", class: "btn btn-default" %>
-  </div>
 
 <% end %>

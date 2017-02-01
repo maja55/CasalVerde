@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   layout "creative"
-
   def new
     @booking = Booking.new
   end
@@ -11,13 +10,13 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to 'booking-details/show'
     else
-      render :create
+      render :new
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :number_of_nights, :number_of_guests, :salutation, :first_name, :insertion, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email)
+    params.require(:booking).permit(:salutation, :first_name, :insertion, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, :email_confirmation)
   end
 end

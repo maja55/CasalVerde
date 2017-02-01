@@ -41,6 +41,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'country_select'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -53,7 +55,7 @@ end
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
   gem 'database_cleaner'
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'  
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
 end
 
 
