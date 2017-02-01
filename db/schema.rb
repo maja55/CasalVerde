@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170201130727) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "bookings", force: :cascade do |t|
     t.date     "start_date"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20170201130727) do
 
   create_table "contents", force: :cascade do |t|
     t.text     "paragraph"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "guestbooks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
