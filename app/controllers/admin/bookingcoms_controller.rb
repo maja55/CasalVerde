@@ -1,4 +1,4 @@
-class BookingComController < ApplicationController
+class Admin::BookingcomsController < Admin::BaseController
   require 'nokogiri'
   require 'open-uri'
 
@@ -9,7 +9,6 @@ class BookingComController < ApplicationController
 
     html_data = open('http://www.nu.nl/entertainment').read
     nokogiri_object = Nokogiri::HTML(html_data)
-
 
     @css = nokogiri_object.css('a')
     @xpath  =  nokogiri_object.xpath('a')
