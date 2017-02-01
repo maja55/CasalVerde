@@ -7,5 +7,6 @@
 //= require creative/jquery.fittext
 //= require creative/wow.min
 //= require creative/creative
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_self
-
