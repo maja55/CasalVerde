@@ -13,3 +13,5 @@ module Casa
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+#adds the TinyMCE paths to the Sprockets precompilation paths and then creates symlinks from the non-digested filenames to their digested versions

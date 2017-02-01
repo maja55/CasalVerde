@@ -7,6 +7,7 @@ class PhotosController < ApplicationController
   end
 
   def create
+    @photo = Photo.new(photo_params)
   end
 
   def update
@@ -21,7 +22,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:image_url)
+    params.require(:photo).permit(:image)
   end
 
 end
