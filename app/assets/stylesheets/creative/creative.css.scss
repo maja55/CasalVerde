@@ -480,4 +480,25 @@ body {
 img.img-responsive {
   width: 100%;
   height: 300px;
+  
+select#booking_number_of_guests {
+  color: black;
+  width: 100%;
+  height: 34px;
+}
+
+td.day {
+  color: #777777;
+}
+
+th.next {
+  color: #777;
+}
+
+th.previous {
+  color: #777;
+}
+
+th.picker-switch {
+  color: #777;
 }

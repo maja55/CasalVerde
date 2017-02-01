@@ -13,9 +13,9 @@ layout "creative"
   def create
     @guestbook = Guestbook.new(guestbook_params)
     if @guestbook.save
-      render @guestbooks
+      redirect_to guestbooks_path
     else
-      redirect_to 'guestbooks/index'
+      render 'guestbooks/index'
     end
   end
 
