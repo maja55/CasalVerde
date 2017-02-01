@@ -11,8 +11,8 @@ class ContentsController < ApplicationController
   end
 
   def create
-    if @content.save (content_params)
-      render contents_path
+    if @content.save(content_params)
+      render 'index'
     #   render status: 201, json: {
     #     message: "Content saved",
     #     content: content
@@ -56,7 +56,7 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :paragraph, list: [])
+    params.require(:content).permit(:paragraph)
   end
 
 end
