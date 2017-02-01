@@ -1,5 +1,6 @@
 class CreativesController < ApplicationController
-  # If the layouts/application.html.erb doesn't work as aspected, uncommend: layout "creative"
+# included the next line in every controller for the styling
+layout "creative"
 
   def index
   end
