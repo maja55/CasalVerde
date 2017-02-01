@@ -9,7 +9,7 @@
 
 <body>
 <header>
-  <h1>.: Admin layout</h1>
+  <h1><%= link_to ".: Admin panel", admin_root_path %></h1>
 </header>
 
 <div id="flex-container">
@@ -18,7 +18,19 @@
       <nav>
         <span class="nav-title">Bookings</span>
         <ul>
+          <li>Overview</li>
+          <li>New booking</li>
           <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+        </ul>
+      </nav>
+
+
+      <nav>
+        <span class="nav-title">External</span>
+        <ul>
+          <li><%= link_to "Booking.com", admin_bookingcoms_path %></li>
           <li>Item</li>
         </ul>
       </nav>
@@ -26,8 +38,8 @@
       <nav>
         <span class="nav-title">Admin users</span>
         <ul>
-          <li>Item</li>
-          <li>Item</li>
+          <li>Overview</li>
+          <li>Add admin</li>
         </ul>
       </nav>
     </aside>

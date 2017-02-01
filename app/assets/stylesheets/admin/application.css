@@ -25,14 +25,18 @@ body {
 
 header {
   background-color: rgb(168, 186, 196);
-  height: 100px;
+  height: 70px;
 
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 35px;
   margin:0;
-  padding: 5px;
+  padding: 10px;
+}
+h1 a {
+  text-decoration: none;
+  color: #434755;
 }
 
 
@@ -49,9 +53,31 @@ h1 {
 
   .nav-title {
     font-weight: bold;
+    padding: 3px;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    display: block;
+  }
+  nav ul {
+    padding: 0;
+    margin:0;
+  }
+
+  nav ul li {
+    list-style: none;
+    padding: 3px;
+    height: 20px
+  }
+
+  nav ul li:nth-child(odd) {
+    background-color: rgb(159, 176, 176);
+  }
+
+  nav ul li:nth-child(even) {
+    background-color: rgb(144, 162, 162)
   }
 
   #content {
     padding: 5px;
-
   }
