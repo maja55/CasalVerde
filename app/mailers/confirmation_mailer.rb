@@ -10,9 +10,8 @@ class ConfirmationMailer < ApplicationMailer
   # it passes in the variables needed to generate the booking view.
   def new_confirmation(booking)
     @booking = booking
-    @greeting = "Hi"
 
-    mail to: "@booking.email",
+    mail to: @booking.email,
       subject: "Booking Confirmation for Casalverde"
   end
 
