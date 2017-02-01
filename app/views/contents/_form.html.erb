@@ -3,7 +3,7 @@
 
   <div class="form-group">
     <label>Paragraph</p></label>
-    <%= f.text_area :paragraph, rows: 10, placeholder: "Leave this field blank if you don't need a paragraph/text", class: "tinymce" %>
+    <%= f.text_area :paragraph, rows: 10, placeholder: "Write your paragraph or list here", class: "tinymce" .html_safe %>
     <%= tinymce %>
   </div>
 

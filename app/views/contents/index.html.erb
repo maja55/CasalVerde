@@ -1,7 +1,6 @@
-<% content = Content.find(2) %>
-<%= content.paragraph %>
-
+<% content = Content.find_by_id(2) %>
+<%= content.paragraph.html_safe %>
 <hr>
-<%= text_area_tag :content, content.paragraph, :class => "tinymce", :rows => 10, :cols => 100 %>
-<%= tinymce %>
-ola again
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to "Edit", edit_content_path(2)%>
+<% end %>

@@ -7,4 +7,3 @@ Content.delete_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 villa_description = Content.create(paragraph: "Villa description bla bla")
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
