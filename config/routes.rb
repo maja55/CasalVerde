@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 root to: 'creatives#index'
 
-
 resources :photos, only: [:new, :edit, :update, :destroy]
+resources :booking_com, only: [:index]
 
 end
