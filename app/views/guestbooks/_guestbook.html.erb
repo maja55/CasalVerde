@@ -1,0 +1,13 @@
+<section id="guestbook">
+
+  <h3>Guestbook</h3>
+
+  <% @guestbooks.each do |guestbook| %>
+
+    <h4>Name: </h4><%= guestbook.name %>
+    <p>Message:</p><%= guestbook.message %>
+
+  <% end %>
+
+
+</section>

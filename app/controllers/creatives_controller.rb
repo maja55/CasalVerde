@@ -3,5 +3,7 @@ class CreativesController < ApplicationController
 layout "creative"
 
   def index
+    @booking = Booking.new
   end
+
 end
