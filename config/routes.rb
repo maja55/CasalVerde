@@ -7,6 +7,7 @@ root to: 'creatives#index'
 resources :photos, only: [:new, :create, :edit, :update, :destroy]
 resources :bookings, only: [:new, :create]
 resources :contents, only: [:index, :new, :create, :edit, :update, :destroy]
+resources :guestbooks, only: [:show, :index, :new, :create]
 resources :booking_com, only: [:index]
-  
+ 
 end

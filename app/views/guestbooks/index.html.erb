@@ -1,0 +1,11 @@
+<h3>This is a Guestbook</h3>
+
+<% @guestbooks.each do |guestbook| %>
+<div>  <h4>Name: <%= guestbook.name %></h4>
+       <p>Message:</p><%= guestbook.message %>
+</div>
+<br>
+<% end %>
+
+<h3>Feel free to leave a message</h3>
+<%= render "form" %>
