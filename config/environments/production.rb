@@ -27,6 +27,9 @@ Rails.application.configure do
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
+  #to include tinymce-jquery.js independently (i.e. using javascript_include_tag)
+  config.assets.precompile << "tinymce-jquery.js"
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
