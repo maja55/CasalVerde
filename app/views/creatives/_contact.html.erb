@@ -18,23 +18,22 @@
     </div> -->
 
 
-  <form>
+  <%= form_for @question do |f| %>
     <h2>Contact Form</h2>
   <div class="form-group">
     <label for="Name">Name</label>
-    <input type="name" class="form-control" id="name" placeholder="Name">
+    <%= f.string :name, placeholder: "Name", class="form-control" %>
   </div>
   <div class="form-group">
     <label for="Email">Email</label>
-    <input type="email" class="form-control" id="Email" placeholder="Email">
+    <%= f.string :email, placeholder: "youremail@example.com", class="form-control" %>
   </div>
   <div class="form-group">
     <label for="Question">Question/Remark</label>
-    <textarea class="form-control" rows="3"></textarea>
-    <p class="help-block">Example block-level help text here.</p>
+    <%= f.text_field :question, placeholder: "Your Question", class="form-control"%>
   </div>
 
-
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-</section>
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-default" %>
+  </div>
+  <% end %>
