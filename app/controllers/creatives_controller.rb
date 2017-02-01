@@ -4,5 +4,11 @@ layout "creative"
 
   def index
     @question = Question.new
+    @photos = Photo.all
+    @booking = Booking.new
   end
+
+  def show
+  end
+
 end

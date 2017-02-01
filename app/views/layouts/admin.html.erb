@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin panel</title>
+  <%= stylesheet_link_tag 'admin/application.css', media: 'all' %>
+
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<header>
+  <h1><%= link_to ".: Admin panel", admin_root_path %></h1>
+</header>
+
+<div id="flex-container">
+
+    <aside>
+      <nav>
+        <span class="nav-title">Bookings</span>
+        <ul>
+          <li><%= link_to "All bookings", admin_bookings_path %></li>
+          <li><%= link_to "New booking", new_admin_booking_path %></li>
+          <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+        </ul>
+      </nav>
+
+
+      <nav>
+        <span class="nav-title">External bookings</span>
+        <ul>
+          <li><%= link_to "Booking.com", admin_bookingcoms_path %></li>
+          <li>Item</li>
+        </ul>
+      </nav>
+
+      <nav>
+        <span class="nav-title">Admin users</span>
+        <ul>
+          <li>Overview</li>
+          <li>Add admin</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <section id="content">
+      <%= yield %>
+    </section>
+
+</div>
+
+</body>
+</html>
