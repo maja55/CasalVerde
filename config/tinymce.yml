@@ -1,13 +1,7 @@
-default:
-  toolbar:
-    - styleselect | bold italic | undo redo
-    - image | link
-  plugins:
-    - image
-    - link
-
-alternate:
-  selector: textarea.table-editor
-  toolbar: styleselect | bold italic | undo redo | table
-  plugins:
-    - table
+width: 70%
+height: 60%
+toolbar:
+  - styleselect | bold italic | undo redo | alignleft aligncenter alignright
+plugins:
+  - image
+  - link
