@@ -10,7 +10,8 @@ resources :contents, only: [:index, :new, :create, :edit, :update, :destroy]
 resources :guestbooks, only: [:show, :index, :new, :create]
 
 namespace :admin do
-  root 'bookingcoms#index'
+  root 'pages#index'
   resources :bookingcoms, only: [:index]
+  resources :bookings, only: [:index]
 end
 end
