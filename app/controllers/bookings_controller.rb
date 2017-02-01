@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       redirect_to 'booking-details/show'
+      ConfirmationMailer.new_confirmation(@booking).deliver_now
     else
       render :create
     end
