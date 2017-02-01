@@ -1,10 +1,6 @@
-ola
-<%= text_area_tag :content, "Edit this", :class => "tinymce", :rows => 10, :cols => 100 %>
-ola again
-
-<%= text_area_tag :content, "#villa_description", :class => "tinymce", :rows => 40, :cols => 120 %>
-<div class = "tinymce", id = "villa_description">
-<%= Content.all.first.paragraph %>
-<%= link_to "Edit", edit_content_path(@content = Content.find(1)) %>
-</div>
-<%= tinymce %>
+<% content = Content.find_by_id(2) %>
+<%= content.paragraph.html_safe %>
+<hr>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to "Edit", edit_content_path(2)%>
+<% end %>
