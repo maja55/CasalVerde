@@ -3,5 +3,10 @@ class CreativesController < ApplicationController
 layout "creative"
 
   def index
+    @photos = Photo.all
+  end
+
+  def show
+
   end
 end
