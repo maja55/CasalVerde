@@ -1,6 +1,3 @@
-class Guestbook < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :message, presence: true
-
+class Guestbook < ActiveRecord::Base
+  validates :name, :email, :message, :presence => true
 end
