@@ -41,8 +41,13 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
+    autoprefixer-rails (6.7.0)
+      execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     bootstrap3-datetimepicker-rails (4.17.43)
       momentjs-rails (>= 2.8.1)
     builder (3.2.3)
@@ -253,6 +258,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.3.6)
   bootstrap3-datetimepicker-rails (~> 4.17.43)
   byebug
   capybara (~> 2.9, >= 2.9.1)
@@ -274,7 +280,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.1)
   rspec-rails (~> 3.5, >= 3.5.2)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   selenium-webdriver (~> 2.53)
   shoulda-matchers (~> 3.1, >= 3.1.1)
   spring

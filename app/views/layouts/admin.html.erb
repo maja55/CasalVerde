@@ -11,8 +11,9 @@
 <body>
 <header>
   <h1><%= link_to "Admin panel", admin_root_path %></h1>
-  <div class="user" >
-    <%= current_user.email %> <span class="logout"><%= link_to "Log out", destroy_user_session_path, :confirm=>'Are you sure to log out?' %></span>
+  <div id="header_user" >
+    <span id="current_user"><%= current_user.email %> </span>
+    <span id="logout"><%= link_to "Log out", destroy_user_session_path, :confirm=>'Are you sure to log out?', :class => "btn btn-primary" %></span>
   </div>
 </header>
 
