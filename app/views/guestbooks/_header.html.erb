@@ -1,10 +1,34 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
-            <h2>Did you enjoy your stay?</h2>
-            <hr>
-            <p>Check out what others said about Cas'al Verde. Feel free to leave a message in our Guestbook!</p>
-            <a href="#guestbook" class="btn btn-primary btn-xl page-scroll">Guestbook</a>
-        </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-1 text-center">
+                <h2>Did you enjoy your stay?</h2>
+                <hr>
+                <%= form_for Guestbook.new do |f| %>
+                  <div class="form-group">
+                    <label>Name</label>
+                    <%= f.text_field :name, class: "form-control" %>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <%= f.text_field :email, class: "form-control" %>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label>Message</label>
+                    <%= f.text_area :message, class: "form-control" %>
+                  </div>
+                  <br>
+                  <div clas="action">
+                    <%= f.submit "Submit", class: "btn btn-primary btn-xl page-scroll" %>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+      </div>
     </div>
+  </div>
 </header>
