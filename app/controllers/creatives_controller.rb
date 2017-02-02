@@ -3,6 +3,7 @@ class CreativesController < ApplicationController
 layout "creative"
 
   def index
+    @question = Question.new
     @photos = Photo.all
     @booking = Booking.new
   end

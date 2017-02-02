@@ -1,6 +1,10 @@
 class Admin::BookingsController < Admin::BaseController
-def index
+  def index
+    @bookings = Booking.all
+  end
 
-end
+  def new
+    @booking = Booking.new
+  end
 
 end

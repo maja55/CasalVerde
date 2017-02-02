@@ -5,9 +5,9 @@ class QuestionMailer < ApplicationMailer
   #
   #   en.question_mailer.new_question.subject
   #
-  def new_question
-    @greeting = "Hi"
+  def new_question(question)
+      @question = question
 
-    mail to: "to@example.org"
+    mail to: "owner@casalverde.nl"
   end
 end

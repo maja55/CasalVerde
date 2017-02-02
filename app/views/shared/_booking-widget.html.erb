@@ -2,18 +2,18 @@
   <div class="row">
     <div class="col-md-4">
       <div>
-        <%= f.label("Check-in") %>
-        <div class='input-group date' id='datetimepicker-start'>
-          <input type='text' class="form-control" />
-          <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-          </span>
-        </div>
+        <label for="Check-in", class="form-label-alt">Check-in</label>
+          <div class='input-group date' id='datetimepicker-start'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
       </div>
     </div>
     <div class="col-md-4">
       <div>
-        <%= f.label("Check-out") %>
+        <label for="Check-out", class="form-label-alt">Check-out</label>
         <div class='input-group date' id='datetimepicker-end'>
           <input type='text' class="form-control" />
           <span class="input-group-addon">
@@ -24,7 +24,7 @@
     </div>
     <div class="col-md-4">
       <div>
-        <%= f.label("Guests") %>
+        <label for="Number of Guests", class="form-label-alt">Number of Guests</label>
         <div>
           <%= f.select :number_of_guests, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]] %>
         </div>
