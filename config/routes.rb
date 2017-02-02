@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   resources :guestbooks, only: [:show, :index, :new, :create]
   resources :questions, only: [:create]
 
-  
+
   post '/email_processor' => 'griddler/emails#create'
 
   namespace :admin do
     root 'pages#index'
     resources :bookingcoms, only: [:index]
-    resources :bookings, only: [:index, :new]
+    resources :bookings, except: [:show]
     resources :guestbooks, only: [:index, :update, :destroy]
   end
 end

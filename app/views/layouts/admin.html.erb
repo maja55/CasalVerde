@@ -25,9 +25,6 @@
         <ul>
           <li><%= link_to "All bookings", admin_bookings_path %></li>
           <li><%= link_to "New booking", new_admin_booking_path %></li>
-          <li>Item</li>
-          <li>Item</li>
-          <li>Item</li>
         </ul>
       </nav>
 
@@ -36,17 +33,16 @@
         <span class="nav-title">External bookings</span>
         <ul>
           <li><%= link_to "Booking.com", admin_bookingcoms_path %></li>
-          <li>Item</li>
         </ul>
       </nav>
 
       <nav>
-        <span class="nav-title">Admin users</span>
+        <span class="nav-title">Guestbook</span>
         <ul>
-          <li>Overview</li>
-          <li>Add admin</li>
+          <li><%= link_to "All posts", admin_guestbooks_path %></li>
         </ul>
       </nav>
+
     </aside>
 
     <section id="content">
