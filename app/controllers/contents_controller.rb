@@ -4,6 +4,7 @@ class ContentsController < ApplicationController
 
   def index
     @contents = Content.all
+    @photos = Photo.all
     # render status: 200, json: contents
   end
 
