@@ -20,4 +20,12 @@ class Booking < ApplicationRecord
   #   message: "only allows numbers"
   # }
 
+  def full_name
+    first_name + " " + last_name
+  end
+
+  def booking_dates
+    start_date.to_s + " till " + end_date.to_s
+  end
+
 end
