@@ -23,10 +23,10 @@ class ContentsController < ApplicationController
 
   def update
     @content = Content.find(params[:id])
-    if @content.update(content_params)
-      redirect_to information_path
+    if @content.update(content_params) && params[:controller] == "contents"
+    redirect_to information_path
     else
-      redirect_to information_path
+      redirect_to root_path
     end
   end
 
