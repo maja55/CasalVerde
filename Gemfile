@@ -14,9 +14,6 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # To add the Boostrap theme to the Rails app
 gem 'frontend-generators'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -39,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'tinymce-rails'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
 
 
 # Use Capistrano for deployment
