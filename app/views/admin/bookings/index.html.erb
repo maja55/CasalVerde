@@ -1,4 +1,17 @@
 <h2>Booking overview</h2>
-<p>blabla</p>
 
 <%= @bookings.length %> bookings are in our system.
+
+<table class="table table-inverse">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Phonenumber</th>
+    <th>E-mail</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <%= render @bookings %>
+  </tbody>
+</table>
