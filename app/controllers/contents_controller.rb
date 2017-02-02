@@ -33,6 +33,8 @@ class ContentsController < ApplicationController
     @content = Content.find(params[:id])
     if @content.update(content_params)
       redirect_to contents_path
+    else
+      redirect_to contents_path
     #   render status: 200, json: {
     #     message: "Content updated",
     #     content: content
