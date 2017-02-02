@@ -1,7 +1,13 @@
 class Booking < ApplicationRecord
+<<<<<<< HEAD
   # validates :first_name, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, presence: true
   #
   #
+=======
+  validates :first_name, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, presence: true
+
+
+>>>>>>> master
   # validates :first_name, format: { with: /\A[a-zA-Z]\z/,
   #   message: "only allows letters" }
   # validates :last_name, format: { with: /\A[a-zA-Z]\z/,
@@ -20,6 +26,7 @@ class Booking < ApplicationRecord
   #   message: "only allows numbers"
   # }
 
+<<<<<<< HEAD
 
 
  # Booking valid methods
@@ -157,5 +164,14 @@ end
   end
 
 
+=======
+  def full_name
+    first_name + " " + last_name
+  end
+
+  def booking_dates
+    start_date.to_s + " till " + end_date.to_s
+  end
+>>>>>>> master
 
 end

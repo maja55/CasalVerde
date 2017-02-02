@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202141728) do
+ActiveRecord::Schema.define(version: 20170202160957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20170202141728) do
     t.string   "city"
     t.string   "phone_number"
     t.string   "email"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "origin",           default: 0
   end
 
   create_table "contents", force: :cascade do |t|
@@ -47,14 +48,17 @@ ActiveRecord::Schema.define(version: 20170202141728) do
     t.string   "name"
     t.string   "email"
     t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "published",  default: false
   end
 
   create_table "photos", force: :cascade do |t|
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "tag"
+    t.integer  "number"
   end
 
   create_table "questions", force: :cascade do |t|
