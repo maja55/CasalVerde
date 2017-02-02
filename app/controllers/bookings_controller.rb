@@ -12,13 +12,13 @@ class BookingsController < ApplicationController
       redirect_to 'booking-details/show'
       ConfirmationMailer.new_confirmation(@booking).deliver_now
     else
-      render :create
+      render :new
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :number_of_nights, :number_of_guests, :salutation, :first_name, :insertion, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email)
+    params.require(:booking).permit(:first_name, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, :email_confirmation)
   end
 end

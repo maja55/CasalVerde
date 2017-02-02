@@ -4,8 +4,16 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">Book now!</h2>
                 <hr class="light">
-                <p class="text-faded">Booking Form</p>
-                <a href="#" class="btn btn-default btn-xl">Whoop Whoop</a>
+                <%= render 'shared/booking-widget' %>
+                <p></p>
+                <div class="row">
+                  <a class="btn btn-default btn-xl" button="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Check Availability</a>
+                </div>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-block">
+                    <%= render 'shared/booking-form' %>
+                  </div>
+                </div>
             </div>
         </div>
     </div>

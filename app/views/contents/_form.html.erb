@@ -1,12 +1,11 @@
 <%= form_for @content do |f| %>
-  <div class="form-group">
-    <label>Title</label>
-    <%= f.text_field :paragraph, rows: 1, placeholder: "Leave this field blank if you don't need a title", class: "form-control" %>
-  </div>
+
 
   <div class="form-group">
-    <label>Paragraph</p></label>
-    <%= f.text_area :paragraph, rows: 10, placeholder: "Leave this field blank if you don't need a paragraph/text", class: "form-control" %>
+    <label>Text:</label>
+    <br>
+    <%= f.text_area :paragraph, :class => "tinymce", :rows => 18, :cols => 80 %>
+    <%=tinymce%>
   </div>
 
   <label>Publish this content?</label>
