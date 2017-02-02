@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'creatives#index'
 
+
   resources :photos, only: [:new, :create, :edit, :update, :destroy, :show]
   resources :bookings, only: [:new, :create]
   resources :contents, only: [:index, :edit, :update,]
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :guestbooks, only: [:show, :index, :new, :create]
   resources :questions, only: [:create]
+
+  
+  post '/email_processor' => 'griddler/emails#create'
 
   namespace :admin do
     root 'pages#index'
