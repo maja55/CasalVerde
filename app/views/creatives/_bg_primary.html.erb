@@ -7,7 +7,12 @@
                 <%= render 'shared/booking-widget' %>
                 <p></p>
                 <div class="row">
-                  <a href="#" class="btn btn-default btn-xl">Book now</a>
+                  <a class="btn btn-default btn-xl" button="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Check Availability</a>
+                </div>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-block">
+                    <%= render 'shared/booking-form' %>
+                  </div>
                 </div>
             </div>
         </div>

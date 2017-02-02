@@ -481,7 +481,7 @@ img.img-responsive {
   width: 100%;
   height: 300px;
 }
-  
+
 select#booking_number_of_guests {
   color: black;
   width: 100%;
@@ -502,4 +502,35 @@ th.previous {
 
 th.picker-switch {
   color: #777;
+}
+
+select#booking_date_of_birth_1i, select#booking_date_of_birth_2i, select#booking_date_of_birth_3i, select#booking_country {
+  height: 34px;
+  color: #999;
+  width: 32.6%;
+}
+
+select#booking_country {
+  width: 100%;
+}
+
+.form-label {
+  float: left;
+}
+
+.form-label-alt {
+  display: flex;
+}
+
+a.btn.btn-default.btn-xl {
+  margin: 14px;
+}
+
+input.btn.btn-default.btn-xl {
+  margin: 14px;
+}
+
+input.btn.btn-default.btn-xl.contact {
+  background-color: #999;
+  color: #fff;
 }
