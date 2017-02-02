@@ -145,6 +145,16 @@ end
      total_price
    end
 
+   def self.array_of_days
+       @bookings = Booking.all
+       @all_days = []
+       @bookings.each do |booking|
+         date_range = booking.start_date..booking.end_date
+         all_days = date_range.map { |d| Date.new(d.year, d.month, d.day, 1) }.uniq
+         @all_days = all_days.map { |d| d.strftime '%Y-%m-%d' }
+       end
+       return @all_days
+  end
 
 
 
