@@ -17,4 +17,3 @@
 //= require bootstrap
 //= require tinymce
 //= require tinymce-jquery
-//= require lightbox-bootstrap
