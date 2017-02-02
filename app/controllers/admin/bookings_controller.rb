@@ -27,7 +27,7 @@ before_action :set_booking, except: [:index, :new, :create]
     if @booking.update_attributes(booking_params)
        redirect_to admin_bookings_path
     else
-       render 'edit'
+       render :edit
     end
   end
 
