@@ -10,5 +10,7 @@
 <div>
   <% photo = Photo.find(19) %>
   <%= image_tag photo.image %>
+  <% if admin? %>
   <%= link_to "Edit", edit_photo_path(photo), class: "btn btn-default"%>
+  <% end %>
 </div>

@@ -25,7 +25,6 @@ class PhotosController < ApplicationController
 
   def edit
     @photo = Photo.find(params[:id])
-    session[:return_to] = request.referer
   end
 
   def update
