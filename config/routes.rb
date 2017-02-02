@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     root 'pages#index'
     resources :bookingcoms, only: [:index]
     resources :bookings, only: [:index, :new]
+    resources :guestbooks, only: [:index, :update, :destroy]
   end
 end
