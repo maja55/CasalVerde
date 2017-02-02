@@ -6,5 +6,4 @@ class Admin::BookingsController < Admin::BaseController
   def new
     @booking = Booking.new
   end
-
 end
