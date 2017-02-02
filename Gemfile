@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'tinymce-rails'
 gem 'devise'
 
+gem 'lightbox-bootstrap-rails', '5.1.0.1'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
