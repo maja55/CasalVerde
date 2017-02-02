@@ -1,7 +1,7 @@
 <section id="contact">
 
   <h3>Feel free to leave a message</h3>
-  
+
   <%= form_for Guestbook.new do |f| %>
     <div class="form-group">
       <label>Name</label>
@@ -21,6 +21,19 @@
     <div clas="action">
       <%= f.submit "Submit", class: "btn btn-primary btn-xl page-scroll" %>
     </div>
+
+
+    <% if @guestbook.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@guestbook.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+        <ul>
+        <% @guestbook.errors.full_messages.each do |msg| %>
+          <li><%= msg %>This is an error</li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 
 </section>

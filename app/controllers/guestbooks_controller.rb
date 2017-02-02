@@ -15,7 +15,7 @@ layout "creative"
     if @guestbook.save
       redirect_to guestbooks_path
     else
-      render 'guestbooks/index'
+      redirect_to guestbooks_path
     end
   end
 
