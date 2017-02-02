@@ -24,39 +24,26 @@ class Booking < ApplicationRecord
 
  # should return false if the start date is not at least 4 days from now
  # works
+  def season
+   current_season_id = ""
+   start_date = self.start_date
+   @seasons = Season.all
+   @seasons.each do |season|
+     if (season.start_date <= start_date) && (season.end_date > start_date)
+       then current_season_id = season.id
+     end
+   end
+
+   current_season_id
+  end
+
+
   def timely_start_date?
     if self.start_date - Date.today > 4
       return true
     else
       return false
     end
-  end
-
-
-
-
-
-  # def what_season(self.start_date)
-  #   start_date = self.start_date
-  #   @seasons = Season.all
-  #   @seasons.each do |season|
-  #     if self.start_date > season.start_date && self.start_date < season.end_date
-  #       current_season << season.id
-  #     end
-  #   end
-  # end
-
-# should return the season associated with the start_date of the booking
-  def season
-    current_season_id = ""
-    start_date = self.start_date
-    @seasons = Season.all
-    @seasons.each do |season|
-      if (season.start_date <= start_date) && (season.end_date > start_date)
-        then current_season_id = season.id
-      end
-    end
-    current_season_id
   end
 
   def minimum_stay?
@@ -69,7 +56,7 @@ class Booking < ApplicationRecord
 
 # should return true if it is not in high season or if the booking runs from
 # saturday to a saturday
- def valid_changeover?
+  def valid_changeover?
    season = self.season
    changeover = Season.find(season).changeover
    days = self.start_date.wday + self.end_date.wday
@@ -80,7 +67,30 @@ class Booking < ApplicationRecord
     else
       return false
     end
- end
+  end
+
+  def available?
+   # returns false if there is an overlapping booking
+   start_date = self.start_date
+   end_date = self.end_date
+   bookings = Booking.all
+   bookings.each do |booking|
+     if (booking.start_date < start_date) && (booking.end_date > start_date)
+       return false
+     else
+       return true
+     end
+   end
+  end
+
+  def valid_booking?
+    if self.available? && self.valid_changeover? && self.minimum_stay? && self.timely_start_date? == true
+      return true
+    else
+      return false
+    end
+  end
+
 
  def extra_persons
    #returns the amount of guests over 8
@@ -92,67 +102,45 @@ class Booking < ApplicationRecord
     end
   end
 
-  def available?
-    # returns false if there is an overlapping booking
-    start_date = self.start_date
-    end_date = self.end_date
-    bookings = Booking.all
-    bookings.each do |booking|
-      if (booking.start_date < start_date) && (booking.end_date > start_date)
-        return false
-      else
-        return true
-      end
-    end
-  end
-
-
- def price
-   # number_of_nights * night_price of Season
-   # + extra_guest_price of season * extra_guests
-   # + additional_night_price of season * additional number_of_nights
-   # + deposit
- end
-
- def base_price
+  def base_price
    number_of_nights = self.number_of_nights
    season = self.season
    nightly_price = Season.find(season).nightly_cost.to_f
    base_price = number_of_nights * nightly_price
    base_price
- end
+  end
 
- def extra_guest_price
+  def extra_guest_price
    season = self.season
    extra_guests = self.extra_persons
    extra_guest_price_per_night = Season.find(season).extra_person_night
    extra_guest_price = extra_guests * extra_guest_price_per_night
    extra_guest_price.to_f
-end
+  end
 
 
 
-   def deposit
-     season = self.season
-     deposit = Season.find(season).deposit
-     deposit.to_f
-   end
+  def deposit
+   season = self.season
+   deposit = Season.find(season).deposit
+   deposit.to_f
+  end
 
-   def calculate_total_price
-     total_price = self.base_price + self.extra_guest_price + self.deposit
-     total_price
-   end
+  def calculate_total_price
+   total_price = self.base_price + self.extra_guest_price + self.deposit
+   total_price
+  end
 
    def self.array_of_days
-       @bookings = Booking.all
-       @all_days = []
-       @bookings.each do |booking|
-         date_range = booking.start_date..booking.end_date
-         all_days = date_range.map { |d| Date.new(d.year, d.month, d.day, 1) }.uniq
-         @all_days = all_days.map { |d| d.strftime '%Y-%m-%d' }
-       end
-       return @all_days
-  end
+     @bookings = Booking.all
+     @all_days = []
+     @bookings.each do |booking|
+       date_range = booking.start_date..booking.end_date
+       all_days = date_range.map { |d| Date.new(d.year, d.month, d.day, 1) }.uniq
+       @all_days = all_days.map { |d| d.strftime '%Y-%m-%d' }
+     end
+    return @all_days
+   end
 
   def full_name
     first_name + " " + last_name
