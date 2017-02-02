@@ -34,10 +34,7 @@ class Booking < ApplicationRecord
     end
   end
 
-  def booking_per_night
-    # should return an array of hashes with
-    # day by day bookings
-  end
+
 
 
 
@@ -70,13 +67,85 @@ class Booking < ApplicationRecord
     minimum_stay = Season.find(season).min_stay
     return false unless self.number_of_nights >= minimum_stay
   end
+ #works
+
+# should return true if it is not in high season or if the booking runs from
+# saturday to a saturday
+ def valid_changeover?
+   season = self.season
+   changeover = Season.find(season).changeover
+   days = self.start_date.wday + self.end_date.wday
+   # date.wday returns a value (0-6), sunday is 0, saturday = 6
+   # if start_date.wday + end_date.wday = 12 both days are saturday
+    if (changeover == false) || (days == 12)
+      return true
+    else
+      return false
+    end
+ end
+
+ def extra_persons
+   #returns the amount of guests over 8
+   extra_persons = 0
+   people = self.number_of_guests
+    if people > 8
+      extra_persons = people - 8
+      return extra_persons
+    end
+  end
+
+  def available?
+    # returns false if there is an overlapping booking
+    start_date = self.start_date
+    end_date = self.end_date
+    bookings = Booking.all
+    bookings.each do |booking|
+      if (booking.start_date < start_date) && (booking.end_date > start_date)
+        return false
+      else
+        return true
+      end
+    end
+  end
+
+
+ def price
+   # number_of_nights * night_price of Season
+   # + extra_guest_price of season * extra_guests
+   # + additional_night_price of season * additional number_of_nights
+   # + deposit
+ end
+
+ def base_price
+   number_of_nights = self.number_of_nights
+   season = self.season
+   nightly_price = Season.find(season).nightly_cost.to_f
+   base_price = number_of_nights * nightly_price
+   base_price
+ end
+
+ def extra_guest_price
+   season = self.season
+   extra_guests = self.extra_persons
+   extra_guest_price_per_night = Season.find(season).extra_person_night
+   extra_guest_price = extra_guests * extra_guest_price_per_night
+   extra_guest_price.to_f
+end
 
 
 
-   def set_total_price
-     self.price = room.price
-     total_days = (ends_at.to_date - starts_at.to_date).to_i
-     self.total = price * total_days
+   def deposit
+     season = self.season
+     deposit = Season.find(season).deposit
+     deposit.to_f
    end
+
+   def calculate_total_price
+     total_price = self.base_price + self.extra_guest_price + self.deposit
+     total_price
+   end
+
+
+
 
 end

@@ -1,4 +1,5 @@
 Content.delete_all
+Season.delete_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -54,7 +55,7 @@ terraces = Content.create(name: "Terraces", paragraph: "Terrace 1: Accessible fr
 
 surroundings = Content.create(name: "Surroundings", paragraph: "Tuscany need be hardly introduced. Millions of tourists annually visit of Italy's most traditional region with its monumental cities Firenze (Florence), Siena, Pisa, Lucca and Arezzo. \n Cas'al verde Tregole located near the village, 3 km from Castellina in Chianti. In the latter town are available all facilities such as: doctor, pharmacy, supermarket, restaurants, church, police, etc ..The immediate area is ideal for (long and adventurous) walks include nearby Etruscan tombs. \n Also lends the Tuscan area is ideal for cycling mountain biking to road bike. More information for cyclists see the following link. \n Tregole is located 13 kilometers north of Siena and 35 kilometers south of Florence in the famous wine region of Chianti Classico. \n Outside the abovementioned cities are also San Gimignano, Volterra, Poggibonsi, Radda, Greve and other famous places in the immediate vicinity.")
 
-Season.create!(start_date: Date.parse("2016-10-29"), end_date: Date.parse("2017-04-01"), nightly_cost: 215.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0)
-Season.create!(start_date: Date.parse("2017-04-01"), end_date: Date.parse("2017-06-24"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0)
-Season.create!(start_date: Date.parse("2017-06-24"), end_date: Date.parse("2017-09-02"), nightly_cost: 428.0, min_stay: 7, extra_person_night: 20.0, deposit: 500.0)
-Season.create!(start_date: Date.parse("2017-09-02"), end_date: Date.parse("2017-11-04"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0)
+Season.create!(start_date: Date.parse("2016-10-29"), end_date: Date.parse("2017-04-01"), nightly_cost: 215.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
+Season.create!(start_date: Date.parse("2017-04-01"), end_date: Date.parse("2017-06-24"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
+Season.create!(start_date: Date.parse("2017-06-24"), end_date: Date.parse("2017-09-02"), nightly_cost: 428.0, min_stay: 7, extra_person_night: 20.0, deposit: 500.0, changeover: true)
+Season.create!(start_date: Date.parse("2017-09-02"), end_date: Date.parse("2017-11-04"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
