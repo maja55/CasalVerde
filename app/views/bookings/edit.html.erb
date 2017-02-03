@@ -1,9 +1,18 @@
+<section class="bg-primary">
+
+<h2>Your booking</h2>
+
+<ul>
+  <li>Check-in: <%= @booking.start_date %></li>
+  <li>Check-out: <%= @booking.end_date %></li>
+  <li>Number of Guests: <%= @booking.number_of_guests %></li>
+</ul>
+<p></p>
+
+<h4>Total Price: <%= number_to_currency(@booking.calculate_total_price, precision: 2, separator: ',', unit: '€ ') %></h4>
+
+</section>
 <h2>Booking information</h2>
-
-<p><%= @booking.start_date %></p>
-<p><%= @booking.end_date %></p>
-<p><%= @booking.number_of_guests %></p>
-
-<p><%= @booking.calculate_total_price %>
+<p>Please fill in your details below to confirm your booking: </p>
 
 <%= render 'shared/booking-details' %>
