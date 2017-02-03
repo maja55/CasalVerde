@@ -4,16 +4,24 @@
 
   <div class="panel-body">
     <%= form_for @photo do |f| %>
+
       <div class="form-group">
         <label>Image:</label>
         <br>
         <%= f.file_field :image %>
         <br>
-        <label> Publish this photo? </label>
+      </div>
+
+      <div class="form-group">
+      <label>Please choose one tag for your photo from the list below: </label>
+      <br>
+        <%= f.select :tag, [["Villa","villa"], ["Indoor / Room", "room"], ["Outdoors or landscape", "outdoors"]], prompt: " ", class: "form-control" %>
+      </div>
+      <br>
 
           <div class="actions">
             <%= f.submit "Publish", class: "btn btn-primary" %>
-            <%= link_to "Cancel", information_path, class: "btn btn-default"%>
+            <%= link_to "Cancel", information_path, class: "btn btn-primary"%>
           </div>
 
           <%end%>
