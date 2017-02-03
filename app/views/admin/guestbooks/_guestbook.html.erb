@@ -1,3 +1,6 @@
+<% if items.length == 0 %>
+No items were found.
+<% else %>
 <table class="table table-inverse">
   <thead class="thead thead-inverse">
     <tr>
@@ -24,3 +27,5 @@
     <% end %>
   </tbody>
 </table>
+<p><strong>Total:</strong> <%=pluralize(items.length, 'guestbook message')%></item></p>
+<% end %>

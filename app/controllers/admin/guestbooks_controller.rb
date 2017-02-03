@@ -1,7 +1,7 @@
 class Admin::GuestbooksController < Admin::BaseController
   def index
     @guestbooks_published = Guestbook.all.where(published: true)
-    @guestbook_unpublished = Guestbook.all.where(published: false)
+    @guestbooks_unpublished = Guestbook.all.where(published: false)
   end
 
   def update
