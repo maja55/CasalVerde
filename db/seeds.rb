@@ -1,3 +1,5 @@
+Booking.delete_all
+Guestbook.delete_all
 Content.delete_all
 Season.delete_all
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -75,3 +77,28 @@ Season.create!(start_date: Date.parse("2016-10-29"), end_date: Date.parse("2017-
 Season.create!(start_date: Date.parse("2017-04-01"), end_date: Date.parse("2017-06-24"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
 Season.create!(start_date: Date.parse("2017-06-24"), end_date: Date.parse("2017-09-02"), nightly_cost: 428.0, min_stay: 7, extra_person_night: 20.0, deposit: 500.0, changeover: true)
 Season.create!(start_date: Date.parse("2017-09-02"), end_date: Date.parse("2017-11-04"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
+
+User.create(email: "admin@casalverde.nl", password: "casalverde", admin: true)
+
+
+Booking.create!(start_date: Date.parse("2017-02-01"), end_date: Date.parse("2017-02-04"), number_of_nights: 3, number_of_guests: 6, salutation: "Mr.", first_name: "Henk", insertion: "de", last_name: "Vries", date_of_birth: Date.parse("1972-09-02"), country: "The Netherlands", street: "Naxosdreef", house_number: 6, zip_code: "3312DD", city: "Utrecht", phone_number: "0612321222", email: "Henk@vriesnet.nl", origin: 0, confirmed: true)
+
+Booking.create!(start_date: Date.parse("2017-02-05"), end_date: Date.parse("2017-02-10"), number_of_nights: 5, number_of_guests: 3, salutation: "Mr.", first_name: "Ingrid", insertion: "", last_name: "Langen", date_of_birth: Date.parse("1954-03-02"), country: "The Netherlands", street: "Naxosdreef", house_number: 6, zip_code: "3312DD", city: "Emmen", phone_number: "062121222", email: "Ingrid@vriesnet.nl", origin: 0, confirmed: true)
+
+Booking.create!(start_date: Date.parse("2017-03-01"), end_date: Date.parse("2017-03-04"), number_of_nights: 3, number_of_guests: 6, salutation: "Mr.", first_name: "Johan", insertion: "de", last_name: "Boer", date_of_birth: Date.parse("1990-08-02"), country: "The Netherlands", street: "Langestraat", house_number: 26, zip_code: "1000AD", city: "Amsterdam", phone_number: "0612321222", email: "Johan@lajkdflsajklsa.nl", origin: 2, confirmed: true)
+
+Booking.create!(start_date: Date.parse("2017-03-12"), end_date: Date.parse("2017-03-18"), number_of_nights: 5, number_of_guests: 6, salutation: "Mr.", first_name: "Lieve", insertion: "", last_name: "Belg", date_of_birth: Date.parse("1972-09-12"), country: "Belgium", street: "Bakerstreet", house_number: 26, zip_code: "32121AA", city: "Antwerp", phone_number: "03212321222", email: "Lieve@belige.nl", origin: 0, confirmed: false)
+
+Booking.create!(start_date: Date.parse("2017-04-01"), end_date: Date.parse("2017-04-04"), number_of_nights: 3, number_of_guests: 6, salutation: "Ms.", first_name: "Joke", insertion: "de", last_name: "Meijer", date_of_birth: Date.parse("1990-02-02"), country: "The Netherlands", street: "Langestraat", house_number: 26, zip_code: "1000AD", city: "Amsterdam", phone_number: "06323422", email: "joke@lala.nl", origin: 1, confirmed: true)
+
+Booking.create!(start_date: Date.parse("2017-02-01"), end_date: Date.parse("2017-02-04"), number_of_nights: 3, number_of_guests: 6, salutation: "Ms.", first_name: "Klaas", insertion: "", last_name: "Janssen", date_of_birth: Date.parse("1972-03-12"), country: "Belgium", street: "Bakerstreet", house_number: 26, zip_code: "32121AA", city: "Antwerp", phone_number: "067421222", email: "Klaas@email.nl", origin: 1, confirmed: false)
+
+
+Guestbook.create(name: "Gert", email: "gert@blabla.com", message: "This place is the best! I love It! Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", published: true)
+Guestbook.create(name: "Ans", email: "ans@pans.com", message: "Wow I love this villa. The area is also very nice. Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", published: true)
+Guestbook.create(name: "Bertus", email: "bertus@depertus.com", message: "Lalalalalalalala Italy is so nice!! lalalalalala. Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", published: true)
+Guestbook.create(name: "Fred", email: "fred@pret.com", message: "I go back every year. It's amazing.. It's true! blah blah blah blah blah blah blah blah blah blah blah blah blah", published: true)
+Guestbook.create(name: "Donald Trump", email: "donald@peb.nl", message: "SO STUPID! I HATE THIS VILLA! OWNERS ARE BASTARDS. AND WE DONT LIKE THE WEBSITE. AND WE LOVE TRUMP", published: false)
+Guestbook.create(name: "Alfred", email: "alfred@jodokus.kwak", message: "The lake there is beautiful. Lot's of other ducks to play with. blah blah blah blah blah blah blah blah blah blah blah blah", published: false)
+Guestbook.create(name: "Donald", email: "donald@its.true", message: "It's not as nice as America but I think it can be number 2. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", published: false)
+Guestbook.create(name: "Vita", email: "vita@depita.com", message: "The rooms are big! The garden has beautiful flowers! blah blah blah blah blah blah blah blah blah blah blah blah", published: false)
