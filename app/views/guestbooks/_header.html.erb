@@ -7,6 +7,15 @@
                 <h2>Did you enjoy your stay?</h2>
                 <hr>
                 <%= form_for Guestbook.new do |f| %>
+                  <% if Guestbook.new.errors.any? %>
+                     <div id="error_explanation">
+                     <h2><%= pluralize(Guestbook.new.errors.count, "error") %> prohibited this post from being saved:</h2>
+                     <ul><% Guestbook.new.errors.full_messages.each do |msg| %>
+                       <li><%= msg %></li>
+                     <% end %>
+                     </ul>
+                   </div>
+                 <% end %>
                   <div class="form-group">
                     <label>Name</label>
                     <%= f.text_field :name, class: "form-control" %>
