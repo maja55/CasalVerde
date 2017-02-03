@@ -1,0 +1,9 @@
+<h2>Booking information</h2>
+
+<p><%= @booking.start_date %></p>
+<p><%= @booking.end_date %></p>
+<p><%= @booking.number_of_guests %></p>
+
+<p><%= @booking.calculate_total_price %>
+
+<%= render 'shared/booking-details' %>

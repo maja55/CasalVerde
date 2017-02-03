@@ -9,17 +9,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
-      redirect_to 'booking-details/show'
-      ConfirmationMailer.new_confirmation(@booking).deliver_now
+      redirect_to edit_booking_path(@booking)
     else
       render :new
     end
   end
 
-  def show
-
+  def edit
+    @booking = Booking.find(params[:id])
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update_attributes(booking_params)
+    ConfirmationMailer.new_confirmation(@booking).deliver_now
+  end
   private
 
   def booking_params

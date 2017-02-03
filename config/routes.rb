@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   resources :photos, only: [:new, :create, :edit, :update, :destroy, :show]
-  resources :bookings, only: [:new, :create]
+  resources :bookings, only: [:new, :create, :edit, :update]
   resources :contents, only: [:index, :edit, :update,]
   match 'information', to: 'contents#index', via: :all
   resources :users, only: [:show]
