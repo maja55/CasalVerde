@@ -1,7 +1,6 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
-
   def index
     @contents = Content.all
     @photos = Photo.all
@@ -24,10 +23,9 @@ class ContentsController < ApplicationController
 
   def update
     @content = Content.find(params[:id])
-    if @content.update(content_params) && params[:controller] == "contents"
-    redirect_to information_path
-    else
-      redirect_to root_path
+    if @content.update(content_params)
+     redirect_to information_path
+   else render notice: "Update unsuccessful"
     end
   end
 
