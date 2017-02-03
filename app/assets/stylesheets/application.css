@@ -18,24 +18,38 @@
  *= require bootstrap
  *= require font_awesome
 
- @media (min-width: 768px) and (max-width: 991px) {
+
+ @media (min-width: 100px) {
        #myCarousel .carousel-inner .item .item-item:last-child {
          display: none;
        }
     }
- @media (max-width: 768px) {
-      #mymyCarousel .carousel-inner {
-       height: 320px;
-     }
-  }
+
  .carousel-inner {
-   overflow-y: hidden;
+   overflow: hidden;
+   position: relative;
+   width: 100%;
  }
  .carousel-inner .active.left { left: -25%; }
  .carousel-inner .next        { left:  25%; }
  .carousel-inner .prev    { left: -25%; }
  .carousel-control        { width:  4%; }
- .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+ .carousel-control.left,.carousel-control.right {margin-left:0;background-image:none;}
  .carousel-inner .item-item {
    padding:0!important;
+   height: 250px;
+   overflow: hidden;
  }
+
+img.img-responsive{
+  margin: 0 auto;
+  object-fit: cover;
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding:0!important;
+  display: block;
+}
