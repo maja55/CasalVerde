@@ -18,6 +18,9 @@
  *= require bootstrap
  *= require font_awesome
 
+ 
+
+
  header {
      position: relative;
      width: 100%;
@@ -31,3 +34,4 @@
      background-size: cover;
      -o-background-size: cover;
  }
+
