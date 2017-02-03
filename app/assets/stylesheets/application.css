@@ -556,6 +556,7 @@
    color: #fff;
  }
 
+
  @media (min-width: 100px) {
        #myCarousel .carousel-inner .item .item-item:last-child {
          display: none;
@@ -665,3 +666,4 @@ nav ul li:nth-child(odd) {
 .info-text {
   padding: 2% 15% 5% 15%;
 }
+

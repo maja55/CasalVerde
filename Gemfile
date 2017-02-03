@@ -22,6 +22,9 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# for error messages in views
+gem "dynamic_form", '1.1.4'
+
 gem 'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
 

@@ -3,22 +3,21 @@ class GuestbooksController < ApplicationController
 layout "creative"
 
   def index
+    @guestbook = Guestbook.new
     @guestbooks = Guestbook.all.published
   end
 
-  def new
-    @guestbook = Guestbook.new(guestbook_params)
-  end
-
   def create
+    @guestbooks = Guestbook.all.published
     @guestbook = Guestbook.new(guestbook_params)
-    if @guestbook.save
+    if @guestbook.valid?
       redirect_to guestbooks_path
     else
-      redirect_to guestbooks_path
+      render :index
     end
   end
 
+  private
   def guestbook_params
     params.require(:guestbook).permit(:name, :email, :message)
   end
