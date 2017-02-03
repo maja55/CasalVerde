@@ -1,16 +1,13 @@
 <section class="no-padding" id="portfolio">
   <div class="container-fluid">
     <div class="row no-gutter popup-gallery">
-
-
+      <% @photos.each do |photo| %>
       <div class="col-lg-4 col-sm-6">
-        <% @carousel_photos = Photo.all.order(created_at: :desc)%>
-        <div class = "info-carousel"><%= render "shared/carousel" %></div>
-        <% @carousel_photos = Photo.all.order(created_at: :asc)%>
-        <div class = "info-carousel"><%= render "shared/carousel" %></div>
+        <a href="/information" class="portfolio-box">
+          <%= image_tag photo.image, class: "img-responsive", alt: "" %>
+        </a>
       </div>
-
-
+      <% end %>
     </div>
   </div>
 </section>
