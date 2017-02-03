@@ -1,7 +1,7 @@
 <section class="no-padding" id="portfolio">
   <div class="container-fluid">
     <div class="row no-gutter popup-gallery">
-      <% @photos.each do |photo| %>
+      <% @photos[0, 6].each do |photo| %>
       <div class="col-lg-4 col-sm-6">
         <a href="/information" class="portfolio-box">
           <%= image_tag photo.image, class: "img-responsive", alt: "" %>
