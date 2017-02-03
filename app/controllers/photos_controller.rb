@@ -16,11 +16,9 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    if @photo.save && params[:controller] == "photos"
-    redirect_to information_path, notice: 'New photo added'
-    else
-    redirect_to root_path
+    @photo = Photo.new
+    if @photo.save(photo_params)
+    redirect_to information_path
     end
   end
 
@@ -30,8 +28,7 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
-    if @photo.update(photo_params) &&
-      params[:controller] == "photos"
+    if @photo.update(photo_params)
       redirect_to information_path, notice: 'Photo replaced'
     else
       redirect_to root_path

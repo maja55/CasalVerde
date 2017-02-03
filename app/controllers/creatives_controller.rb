@@ -6,6 +6,7 @@ layout "creative"
     @question = Question.new
     @photos = Photo.all
     @booking = Booking.new
+    @contents = Content.all
   end
 
   def show
