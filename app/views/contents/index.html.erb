@@ -21,18 +21,26 @@
 <br>
 
 <div id=carousel, class="container">
+  <% villa_photos = Photo.where(tag:"villa").order(created_at: :desc)%>
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel">
         <div class="carousel-inner">
-
-          <% @photos.each_with_index do |image, index|%>
-
-          <div class="item <%= 'active' if index == 0 %>">
+          <% if admin? %>
+            <div class="item active">
             <div class="item-item col-sm-4">
-            <%= image_tag image.image, class: "img-responsive" %>
+            <%= link_to "Add a new photo to this carousel", new_photo_path(:tag => "villa"), class: "btn btn-new-photo"%>
+            </div>
+            </div>
+          <% end %>
+
+          <% villa_photos.each_with_index do |photo, index|%>
+            <div class="item <%= 'active' if index == 0 && admin? == false %>">
+            <div class="item-item col-sm-4">
+            <%= image_tag photo.image, class: "img-responsive" %>
             <% if admin? %>
-            <%= link_to "Edit", edit_photo_path(image), class: "btn btn-default"%>
+              <%= link_to "Replace", edit_photo_path(photo), class: "btn btn-default"%>
+              <%= link_to "Delete", edit_photo_path(photo), class: "btn btn-default"%>
             <% end %>
             </div>
           </div>
