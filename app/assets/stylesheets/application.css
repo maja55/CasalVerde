@@ -16,19 +16,16 @@
 
 /* for our bootstrap template. Look at https://github.com/MrPowers/frontend-generators */
 
-
-
-
- header {
-     position: relative;
-     width: 100%;
-     min-height: auto;
-     text-align: center;
-     color: #fff;
-     background-image: asset-data-url("creative/header.jpg");
-     background-position: center;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     background-size: cover;
-     -o-background-size: cover;
- }
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  color: #fff;
+  background-image: asset-data-url("creative/header.jpg");
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
