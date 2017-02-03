@@ -2,18 +2,11 @@
 
 <%= @bookings.length %> bookings are in our system.
 
-<table class="table table-inverse">
-  <thead>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Phonenumber</th>
-    <th>E-mail</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-  </thead>
-  <tbody>
-    <%= render @bookings %>
-  </tbody>
-</table>
+<h3>Bookings from frontend</h3>
+<%= render partial: "booking", object: @bookings, as: 'items' %>
+
+<h3>Bookings from Booking.com</h3>
+<%= render partial: "booking", object: @bookings_bookingcom, as: 'items' %>
+
+<h3>Bookings from Micazu</h3>
+<%= render partial: "booking", object: @bookings_micazu, as: 'items' %>

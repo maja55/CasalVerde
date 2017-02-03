@@ -3,6 +3,8 @@ before_action :set_booking, except: [:index, :new, :create]
 
   def index
     @bookings = Booking.all
+    @bookings_bookingcom = Booking.all
+    @bookings_micazu = Booking.all
   end
 
 
