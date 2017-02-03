@@ -8,11 +8,12 @@ layout "creative"
   end
 
   def create
+    @guestbooks = Guestbook.all.published
     @guestbook = Guestbook.new(guestbook_params)
-    if @guestbook.save
+    if @guestbook.valid?
       redirect_to guestbooks_path
     else
-      render
+      render :index
     end
   end
 
