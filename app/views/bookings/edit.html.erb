@@ -43,7 +43,7 @@
         <p>Check-in: <%= @booking.start_date %>  | Check-out: <%= @booking.end_date %> | Number of Guests: <%= @booking.number_of_guests %></p>
       </div>
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <h4>Total Price: <%= number_to_currency(@booking.calculate_total_price, precision: 2, separator: ',', unit: '€ ') %></h4>
+        <h4><strong>Total Price:</strong> <%= number_to_currency(@booking.calculate_total_price, precision: 2, separator: ',', unit: '€ ') %></h4>
       </div>
     </div>
   </div>
