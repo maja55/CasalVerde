@@ -3,7 +3,7 @@ class GuestbooksController < ApplicationController
 layout "creative"
 
   def index
-    @guestbooks = Guestbook.all
+    @guestbooks = Guestbook.all.published
   end
 
   def new
@@ -15,7 +15,7 @@ layout "creative"
     if @guestbook.save
       redirect_to guestbooks_path
     else
-      render 'guestbooks/index'
+      redirect_to guestbooks_path
     end
   end
 

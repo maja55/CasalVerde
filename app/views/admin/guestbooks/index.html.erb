@@ -1,0 +1,22 @@
+<h2>Guestbook admin</h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Active</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @guestbooks.each do |guestbook| %>
+      <tr>
+        <td>[]</td>
+        <td><%= guestbook.name %> (<%= guestbook.email %>:) <br>
+        <%= guestbook.message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

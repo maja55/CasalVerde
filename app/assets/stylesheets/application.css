@@ -19,6 +19,7 @@
  *= require font_awesome
 
 
+
  @media (min-width: 100px) {
        #myCarousel .carousel-inner .item .item-item:last-child {
          display: none;
@@ -92,3 +93,20 @@ img.img-responsive{
   position: relative;
   top: 43%;
 }
+ 
+
+
+ header {
+     position: relative;
+     width: 100%;
+     min-height: auto;
+     text-align: center;
+     color: #fff;
+     background-image: asset-data-url("creative/header.jpg");
+     background-position: center;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     background-size: cover;
+     -o-background-size: cover;
+ }
+
