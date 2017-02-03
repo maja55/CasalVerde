@@ -20,6 +20,7 @@
 
 
 
+
  @media (min-width: 100px) {
        #myCarousel .carousel-inner .item .item-item:last-child {
          display: none;
@@ -109,4 +110,5 @@ img.img-responsive{
      background-size: cover;
      -o-background-size: cover;
  }
+
 

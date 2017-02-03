@@ -5,27 +5,7 @@
             <div class="row">
               <div class="col-lg-8 col-lg-offset-1 text-center">
                 <h2>Did you enjoy your stay?</h2>
-                <hr>
-                <%= form_for Guestbook.new do |f| %>
-                  <div class="form-group">
-                    <label>Name</label>
-                    <%= f.text_field :name, class: "form-control" %>
-                  </div>
-                  <br>
-                  <div class="form-group">
-                    <label>Email</label>
-                    <%= f.text_field :email, class: "form-control" %>
-                  </div>
-                  <br>
-                  <div class="form-group">
-                    <label>Message</label>
-                    <%= f.text_area :message, class: "form-control" %>
-                  </div>
-                  <br>
-                  <div clas="action">
-                    <%= f.submit "Submit", class: "btn btn-primary btn-xl page-scroll" %>
-                  </div>
-                <% end %>
+                <%= render 'form' %>
             </div>
           </div>
       </div>
