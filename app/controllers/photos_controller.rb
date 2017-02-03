@@ -16,8 +16,9 @@ class PhotosController < ApplicationController
   end
 
   def create
-    if @photo.save(photo_params) && params[:controller] == "photos"
-    redirect_to information_path
+    @photo = Photo.new(photo_params)
+    if @photo.save && params[:controller] == "photos"
+    redirect_to information_path, notice: 'New photo added'
     else
     redirect_to root_path
     end
@@ -31,19 +32,26 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     if @photo.update(photo_params) &&
       params[:controller] == "photos"
-      redirect_to information_path
+      redirect_to information_path, notice: 'Photo replaced'
     else
       redirect_to root_path
     end
   end
 
   def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    if params[:controller] == "photos"
+    redirect_to information_path, notice: 'Photo deleted'
+    else
+      redirect_to root_path, notice: 'Photo deleted'
+    end
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:image)
+    params.require(:photo).permit(:image, :tag)
   end
 
   def authenticate_admin!

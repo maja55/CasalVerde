@@ -1,4 +1,22 @@
 class EmailProcessor
+<<<<<<< HEAD
+
+  def initialize(email)
+    @email = email
+  end
+
+  def process
+    # all of your application-specific code here - creating models,
+    # processing reports, etc
+
+    # Here's an example of model creation
+    user = User.find_by_email(@email.from[:email])
+    user.posts.create!(
+      subject: @email.subject,
+      body: @email.body
+    )
+  end
+=======
   def initialize(email)
     @email = email 
   end
@@ -33,4 +51,5 @@ class EmailProcessor
 # country = html.at_css('.country').text
 # phonenumber = html.at_css('.phone_number').text
 # email = html.at_css('.email').text
+>>>>>>> master
 end

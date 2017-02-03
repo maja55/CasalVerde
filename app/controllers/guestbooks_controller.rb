@@ -3,7 +3,7 @@ class GuestbooksController < ApplicationController
 layout "creative"
 
   def index
-    @guestbooks = Guestbook.all
+    @guestbooks = Guestbook.all.published
   end
 
   def new

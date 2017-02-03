@@ -17,3 +17,96 @@
 /* for our bootstrap template. Look at https://github.com/MrPowers/frontend-generators */
  *= require bootstrap
  *= require font_awesome
+
+
+
+ @media (min-width: 100px) {
+       #myCarousel .carousel-inner .item .item-item:last-child {
+         display: none;
+       }
+    }
+
+ .carousel-inner {
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+ }
+ .carousel-inner .active.left { left: -25%; }
+ .carousel-inner .next        { left:  25%; }
+ .carousel-inner .prev    { left: -25%; }
+ .carousel-control        { width:  4%; }
+ .carousel-control.left,.carousel-control.right {margin-left:0;background-image:none;}
+ .carousel-inner .item-item {
+   padding:0!important;
+   height: 250px;
+   overflow: hidden;
+   position: relative;
+ }
+
+img.img-responsive{
+  margin: 0 auto;
+  object-fit: cover;
+  height: 100%;
+}
+
+.img-responsive{
+  margin: 0 auto;
+  object-fit: cover;
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding:0!important;
+  display: block;
+}
+
+.btn-default {
+  z-index: 200;
+  padding: 7px;
+  position: relative;
+  bottom: 40px;
+  left: 5px;
+}
+
+.btn-new-photo {
+  color: #333;
+  background-color: #fff;
+  display: inline-block;
+  padding: 7px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid  #b7b7b7;
+  border-radius: 4px;
+  max-width: 80%;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+  position: relative;
+  top: 43%;
+}
+ 
+
+
+ header {
+     position: relative;
+     width: 100%;
+     min-height: auto;
+     text-align: center;
+     color: #fff;
+     background-image: asset-data-url("creative/header.jpg");
+     background-position: center;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     background-size: cover;
+     -o-background-size: cover;
+ }
+
