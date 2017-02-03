@@ -17,3 +17,4 @@
 //= require bootstrap
 //= require tinymce
 //= require tinymce-jquery
+// Instantiate the Bootstrap carousel

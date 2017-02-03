@@ -1,6 +1,17 @@
 class Booking < ApplicationRecord
   validates :first_name, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, presence: true
 
+def self.casal
+  where(origin: 0)
+end
+
+def self.bookingcom
+  where(origin: 1)
+end
+
+def self.micazu
+  where(origin: 2)
+end
 
   # validates :first_name, format: { with: /\A[a-zA-Z]\z/,
   #   message: "only allows letters" }
