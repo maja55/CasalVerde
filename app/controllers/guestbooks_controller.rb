@@ -11,6 +11,7 @@ layout "creative"
     @guestbooks = Guestbook.all.published
     @guestbook = Guestbook.new(guestbook_params)
     if @guestbook.valid?
+      flash[:notice] = "Thank you! Your submission is now in proces."
       redirect_to guestbooks_path
     else
       render :index
