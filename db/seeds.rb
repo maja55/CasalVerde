@@ -1,4 +1,5 @@
 Content.delete_all
+Season.delete_allBook
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,12 +10,28 @@ Content.delete_all
 
 Photo.delete_all
 
-photo1 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406235/Casalverde/index_photo_1.jpg")
-photo2 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406220/Casalverde/index_photo_2.jpg")
-photo3 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406237/Casalverde/index_photo_3.jpg")
-photo4 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406222/Casalverde/index_photo_4.jpg")
-photo5 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406227/Casalverde/index_photo_5.jpg")
-photo6 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406223/Casalverde/index_photo_6.jpg")
+photo1 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406235/Casalverde/index_photo_1.jpg", tag:"villa", number:1)
+photo2 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406220/Casalverde/index_photo_2.jpg", tag:"room", number:1)
+photo3 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406237/Casalverde/index_photo_3.jpg", tag:"outdoors", number:1)
+photo4 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406222/Casalverde/index_photo_4.jpg", tag:"villa", number:2)
+photo5 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406227/Casalverde/index_photo_5.jpg", tag:"room", number:2)
+photo6 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406223/Casalverde/index_photo_6.jpg", tag:"villa", number:3)
+photo7 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406221/Casalverde/bathroom_1.jpg", tag:"room", number:4)
+photo8 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406231/Casalverde/swimmingpool_1.jpg", tag:"outdoors", number:2)
+photo9 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406234/Casalverde/swimmingpool_2.jpg", tag:"outdoors", number:3)
+photo10 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406234/Casalverde/swimmingpool_3.jpg", tag:"outdoors", number:4)
+photo11 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406234/Casalverde/swimmingpool_4.jpg", tag:"outdoors", number:5)
+photo12 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406223/Casalverde/swimmingpool_5.jpg", tag:"outdoors", number:6)
+photo13 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406223/Casalverde/outside_1.jpg", tag:"outdoors", number:7)
+photo14 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406220/Casalverde/kitchen_1.jpg", tag:"room", number:5)
+photo15 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406221/Casalverde/villa_1.jpg", tag:"villa", number:4)
+photo16 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406225/Casalverde/bedroom_1.jpg", tag:"room", number:6)
+photo17 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406230/Casalverde/bedroom_2.jpg", tag:"room", number:7)
+photo18 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406229/Casalverde/bedroom_3.jpg", tag:"room", number:8)
+photo19 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406230/Casalverde/bathroom_2.jpg", tag:"room", number:9)
+photo20 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406234/Casalverde/bedroom_4.jpg", tag:"room", number:10)
+photo21 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406229/Casalverde/villa_2.jpg", tag:"villa", number:5)
+photo22 = Photo.create(remote_image_url:"http://res.cloudinary.com/mippet/image/upload/v1477406235/Casalverde/villa_3.jpg", tag:"villa", number:6)
 
 header = Content.create(name: "Header", paragraph: "Tranquility, natural beauty, privacy in the heart of the famous Chianti region in Tuscany")
 
@@ -53,3 +70,8 @@ bathrooms = Content.create(name: "Bathrooms", paragraph: "Two bathrooms upstairs
 terraces = Content.create(name: "Terraces", paragraph: "Terrace 1: Accessible from the kitchen, Garden furniture with cushions, Parasol, firepot. Terrace 2: Barbecue, Furniture, Terrace 3: Furniture, shady")
 
 surroundings = Content.create(name: "Surroundings", paragraph: "Tuscany need be hardly introduced. Millions of tourists annually visit of Italy's most traditional region with its monumental cities Firenze (Florence), Siena, Pisa, Lucca and Arezzo. \n Cas'al verde Tregole located near the village, 3 km from Castellina in Chianti. In the latter town are available all facilities such as: doctor, pharmacy, supermarket, restaurants, church, police, etc ..The immediate area is ideal for (long and adventurous) walks include nearby Etruscan tombs. \n Also lends the Tuscan area is ideal for cycling mountain biking to road bike. More information for cyclists see the following link. \n Tregole is located 13 kilometers north of Siena and 35 kilometers south of Florence in the famous wine region of Chianti Classico. \n Outside the abovementioned cities are also San Gimignano, Volterra, Poggibonsi, Radda, Greve and other famous places in the immediate vicinity.")
+
+Season.create!(start_date: Date.parse("2016-10-29"), end_date: Date.parse("2017-04-01"), nightly_cost: 215.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
+Season.create!(start_date: Date.parse("2017-04-01"), end_date: Date.parse("2017-06-24"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)
+Season.create!(start_date: Date.parse("2017-06-24"), end_date: Date.parse("2017-09-02"), nightly_cost: 428.0, min_stay: 7, extra_person_night: 20.0, deposit: 500.0, changeover: true)
+Season.create!(start_date: Date.parse("2017-09-02"), end_date: Date.parse("2017-11-04"), nightly_cost: 357.0, min_stay: 3, extra_person_night: 20.0, deposit: 500.0, changeover: false)

@@ -1,12 +1,13 @@
-<section id="guestbook">
-
-  <h3>Guestbook</h3>
-  <% @guestbooks.each do |guestbook| %>
-
-    <h4>Guest: <%= guestbook.name %></h4>
-    <p>Message:</p><%= guestbook.message %>
-
-  <% end %>
-
-
+<section id="portfolio">
+  <div class="container">
+  <div class=".col-xs-6 .col-sm-4s">
+    <h3>Guestbook</h3><br>
+    <% @guestbooks.each do |guestbook| %>
+    <div class="well">
+      <p>Guest: <%= guestbook.name %></p>
+      <p>Message: <%= guestbook.message %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
 </section>
