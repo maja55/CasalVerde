@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  validates :first_name, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, presence: true
+  #validates :first_name, :last_name, :date_of_birth, :country, :street, :house_number, :zip_code, :city, :phone_number, :email, presence: true
 
 def self.casal
   where(origin: 0)
@@ -110,16 +110,19 @@ end
     if people > 8
       extra_persons = people - 8
       return extra_persons
+    else extra_persons = 0
     end
   end
 
   def base_price
-   number_of_nights = self.number_of_nights
+   number_of_nights = self.end_date - self.start_date
    season = self.season
    nightly_price = Season.find(season).nightly_cost.to_f
    base_price = number_of_nights * nightly_price
    base_price
   end
+
+
 
   def extra_guest_price
    season = self.season
@@ -154,7 +157,7 @@ end
    end
 
   def full_name
-    first_name + " " + last_name
+    "#{first_name} #{last_name}"
   end
 
   def booking_dates

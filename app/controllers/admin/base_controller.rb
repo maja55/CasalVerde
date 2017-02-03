@@ -4,7 +4,7 @@ class Admin::BaseController < ApplicationController
 
   private
     def require_login
-      if !user_signed_in? && current_user.admin?
+      if !user_signed_in? 
       redirect_to new_user_session_path, alert: "Please login first!"
       end
     end

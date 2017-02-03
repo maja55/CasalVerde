@@ -552,13 +552,20 @@ input.btn.btn-default.btn-xl.contact {
   }
 }
 
+#thanks {
+  border-radius: 20px;
+  background-color: #90EE90;
+  padding: 5px;
+  margin: 20px;
+}
+
 header .header {
     position: relative;
     width: 100%;
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: asset-data-url("creative/header-2.jpg");
+    background-image: asset-data-url("creative/header2.jpg");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

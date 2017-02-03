@@ -1,6 +1,4 @@
 class EmailProcessor
-<<<<<<< HEAD
-
   def initialize(email)
     @email = email
   end
@@ -16,18 +14,6 @@ class EmailProcessor
       body: @email.body
     )
   end
-=======
-  def initialize(email)
-    @email = email 
-  end
-
-  def process
-    content = Content.new
-    content.paragraph = "Lalalalaa"
-    content.save
-  end
-
-
 
   def parse_body
     body = @email.body
@@ -51,5 +37,4 @@ class EmailProcessor
 # country = html.at_css('.country').text
 # phonenumber = html.at_css('.phone_number').text
 # email = html.at_css('.email').text
->>>>>>> master
 end
