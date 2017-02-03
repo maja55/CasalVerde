@@ -1,8 +1,8 @@
 <table class="table table-inverse">
   <thead class="thead thead-inverse">
     <th>ID</th>
-    <th>Name</th>
     <th>Date</th>
+    <th>Name</th>
     <th>Phonenumber</th>
     <th>E-mail</th>
     <th>Status</th>
@@ -13,8 +13,8 @@
     <% items.each do |booking| %>
     <tr>
       <td><%= booking.id%></td>
-      <td><%= booking.full_name %></td>
       <td><%= booking.booking_dates%></td>
+      <td><%= booking.full_name %></td>
       <td><%= booking.phone_number%></td>
       <td><%= booking.email%></td>
       <td>n/a</td>
